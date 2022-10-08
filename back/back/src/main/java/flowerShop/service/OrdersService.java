@@ -10,6 +10,7 @@ public interface OrdersService {
 	List<Orders> findAll();
 	Orders findOne (Long id);
 	Orders save(Orders o);
+	Orders update(Orders orders);
 	
 
 

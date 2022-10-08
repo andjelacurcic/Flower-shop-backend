@@ -37,8 +37,22 @@ public class JpaOrderItemService implements OrderItemService {
 	public OrderItem save(OrderItem o) {
 		return orderItemRepository.save(o);
 	}
+
+	@Override
+	public OrderItem delete(Long id) {
+		OrderItem oi = orderItemRepository.findOneById(id);
+		if(oi != null ) {
+			orderItemRepository.delete(oi);
+		}
+		return null;
+	}
+
+	@Override
+	public OrderItem update(OrderItem o) {
+		return orderItemRepository.save(o);
+	}
 	
-private OrderItemDTO convertEntityToDto (OrderItem orderItem) {
+/*private OrderItemDTO convertEntityToDto (OrderItem orderItem) {
 		
 		modelMapper.getConfiguration()
 				.setMatchingStrategy(MatchingStrategies.LOOSE);
@@ -56,6 +70,8 @@ private OrderItemDTO convertEntityToDto (OrderItem orderItem) {
 		
 		orderItem = modelMapper.map(orderItemDTO, OrderItem.class);
 		return orderItem;
-	}
+	}*/
+
+	
 
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,6 +44,20 @@ public class ProductController {
 	        return new ResponseEntity<>(toProductDto.convert(productSave), HttpStatus.CREATED);
 	    }
 	  
+	  //@PreAuthorize("hasRole('ROLE_ADMIN')")
+	    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	    public ResponseEntity<ProductDTO> update(@PathVariable Long id, @Valid @RequestBody ProductDTO categoryDTO){
+
+	        if(!id.equals(categoryDTO.getId())) {
+	            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	        }
+
+	        Product category = toProduct.convert(categoryDTO);
+	        Product saveCategory = productService.update(category);
+
+	        return new ResponseEntity<>(toProductDto.convert(saveCategory),HttpStatus.OK);
+	    }
+	 
 	  @DeleteMapping("/{id}")
 	    public ResponseEntity<Void> delete(@PathVariable Long id){
 		  Product deleteProduct = productService.delete(id);

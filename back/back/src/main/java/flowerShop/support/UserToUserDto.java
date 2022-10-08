@@ -23,7 +23,7 @@ public class UserToUserDto implements Converter<Users, UserDTO> {
 		userDTO.setFirstName(user.getFirstName());
 		userDTO.setLastName(user.getLastName());
 		userDTO.setUserName(user.getUserName());
-		userDTO.setAdresaDTO(toAddress.convert(user.getAdress()));
+		userDTO.setAdresaDTO(toAddress.convert(user.getAddress()));
 		
 		
 		return userDTO;

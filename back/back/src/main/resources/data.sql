@@ -10,10 +10,11 @@ INSERT INTO users (id, email, first_name, last_name, password,user_name, user_ro
               VALUES (2,'tamara@maildrop.cc','Tamara','Milosavljevic','$2y$12$DRhCpltZygkA7EZ2WeWIbewWBjLE0KYiUO.tHDUaJNMpsHxXEw9Ky','tamara','USER',2);
 INSERT INTO users (id, email, first_name, last_name, password,user_name, user_role,address_id)
               VALUES (3,'petar@maildrop.cc','Petar','Jovic','$2y$12$i6/mU4w0HhG8RQRXHjNCa.tG2OwGSVXb0GYUnf8MZUdeadE4voHbC','petar','USER',3);
-
+*/
   
-
-
+INSERT INTO users (id, email, first_name, last_name, password,user_name, user_role,address_id)
+              VALUES (4,'andjelav@maildrop.cc','Andjela','Simic','andjelaandjela','andjela','ADMIN',1);
+/*
 INSERT INTO category(id,name) VALUES (1,'Buket');
 INSERT INTO category(id,name) VALUES (2,'Aranzman');
 INSERT INTO category(id,name) VALUES (3,'Groblje');

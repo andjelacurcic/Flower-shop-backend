@@ -38,7 +38,7 @@ public class JpaOrdersService implements OrdersService {
 		return ordersRepository.save(o);
 	}
 	
-private OrdersDTO convertEntityToDto (Orders orders) {
+/*private OrdersDTO convertEntityToDto (Orders orders) {
 		
 		modelMapper.getConfiguration()
 				.setMatchingStrategy(MatchingStrategies.LOOSE);
@@ -56,6 +56,11 @@ private OrdersDTO convertEntityToDto (Orders orders) {
 		
 		orders = modelMapper.map(ordersDTO, Orders.class);
 		return orders;
-	}
+	}*/
+
+	@Override
+	public Orders update(Orders orders) {
+		return ordersRepository.save(orders);	
+		}
 
 }

@@ -21,6 +21,9 @@ public class OrdersToOrdersDto implements Converter<Orders,OrdersDTO>{
 		ordersDto.setDate(orders.getDate());
 		ordersDto.setContact(orders.getContact());
 		ordersDto.setFullPrice(orders.getFullPrice());
+		ordersDto.setUsersId(orders.getUser().getId());
+		ordersDto.setUsersName(orders.getUser().getFirstName());
+		ordersDto.setLastName(orders.getUser().getLastName());
 		return ordersDto;
 	}
 	

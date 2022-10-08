@@ -10,4 +10,6 @@ public interface OrderItemService {
 	List<OrderItem> findAll();
 	OrderItem findOne (Long id);
 	OrderItem save(OrderItem o);
+	OrderItem delete(Long id);
+	OrderItem update(OrderItem o);
 }

@@ -33,7 +33,7 @@ public class UserDtoToUser implements Converter<UserDTO, Users> {
 		user.setEmail(userDTO.getEmail());
 		user.setFirstName(userDTO.getFirstName());
 		user.setLastName(userDTO.getLastName());
-		user.setAdress(addressService.findById(userDTO.getAdresaDTO().getId()));
+		user.setAddress(addressService.findById(userDTO.getAdresaDTO().getId()));
 		
 		return user;
 		

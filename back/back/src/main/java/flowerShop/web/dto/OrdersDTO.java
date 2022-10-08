@@ -19,7 +19,17 @@ public class OrdersDTO {
 	
 	private String usersName;
 	
+	private String lastName;
 	
+	
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public Long getUsersId() {
 		return usersId;
 	}

@@ -98,9 +98,9 @@ public class UserController {
 
 	        Users user = toUser.convert(userDTO);
 
-//	        if(korisnik.getAdresa()  == null) {
-//	            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);			NEMA KLASE ADRESA
-//	        }
+	        if(user.getAddress()  == null) {
+	           return new ResponseEntity<>(HttpStatus.BAD_REQUEST);	
+	       }
 
 	        return new ResponseEntity<>(toUserDto.convert(userService.save(user)),HttpStatus.OK);
 	    }
