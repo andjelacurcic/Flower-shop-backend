@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM  from 'react-dom';
-import { Route, Link, HashRouter as Router, Routes, Navigate } from 'react-router-dom';
+import { Route, Link, HashRouter as Router, Routes } from 'react-router-dom';
 import { logout } from './services/auth';
 import Home from './components/Home';
 import Login from './components/authorization/Login';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import Product from './components/products/Product';
+import AddProduct from './components/products/AddProduct';
+//import EditProduct from './components/products/EditProduct';
 
 class App extends React.Component {
 
@@ -34,6 +36,7 @@ class App extends React.Component {
                             <Nav.Link as={Link} to="/products">
                                 Products
                             </Nav.Link>
+                           
 
                             <Button onClick={()=>logout()}>logout</Button>
                         </Nav>
@@ -42,7 +45,7 @@ class App extends React.Component {
                         <Routes>
                             <Route path="/" element={<Home/>}/>
                             <Route path="/products" element={<Product/>}/> 
-                            <Route path="/products/add" element={<Product/>}/> 
+                            <Route path="/products/add" element={<AddProduct/>}/> 
                             <Route path="/products/edit/:id" element={<Product/>}/> 
                             {/* {<PutanjaNeka/>} se menja, izbacice gresku ako se ovako pokrene 
                             cd \......
